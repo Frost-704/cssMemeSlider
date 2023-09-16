@@ -78,29 +78,76 @@ input:checked ~ .slider-controls > label {
     transition-property: transform;
     transition-duration: 1s;
  }
+ #s1:checked ~ .navigation > .captures > .capture1{
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 1s;
+  opacity: 1;
+  animation: fadeIn 1s;
+ }
   #s2:checked ~ .slider-images{
     transform: translateX(-100%);
     transition-property: transform;
     transition-duration: 1s;
+ }
+ #s2:checked ~ .navigation > .captures > .capture2{
+  transform: translateY(-200%);
+  transition-property: transform;
+  transition-duration: 1s;
+  opacity: 1;
+  animation: fadeIn 1s;
  }
  #s3:checked ~ .slider-images{
   transform: translateX(-200%);
   transition-property: transform;
     transition-duration: 1s;
 }
+#s3:checked ~ .navigation > .captures > .capture3{
+  transform: translateY(-300%);
+  transition-property: transform;
+  transition-duration: 1s;
+  opacity: 1;
+  animation: fadeIn 1s;
+}
 #s4:checked ~ .slider-images{
   transform: translateX(-300%);
   transition-property: transform;
     transition-duration: 1s;
+}
+#s4:checked ~ .navigation > .captures > .capture4{
+  transform: translateY(-400%);
+  transition-property: transform;
+  transition-duration: 1s;
+  opacity: 1;
+  animation: fadeIn 1s;
 }
 #s5:checked ~ .slider-images{
   transform: translateX(-400%);
   transition-property: transform;
     transition-duration: 1s;
 }
+#s5:checked ~ .navigation > .captures > .capture5{
+  transform: translateY(-500%);
+  transition-property: transform;
+  transition-duration: 1s;
+  opacity: 1;
+  animation: fadeIn 1s;
+}
 .captures {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: flex-start;
+  transform: translateY(30%);
+  font-size: 3vw;
+}
+.capture1,.capture2,.capture3,.capture4,.capture5{
+  opacity: 0;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+input {
+  display: none;
 }
