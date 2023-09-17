@@ -15,6 +15,7 @@ body {
 	height: 100vh;
 }
 .carousel {
+  margin-top: 5%;
   max-width: 70%;
   overflow: hidden;
 }
@@ -31,59 +32,79 @@ body {
 }
   img {
   max-width: 100%;
+  border-radius: 3%;
   }
   
   .slider-images {
     display: flex;
 }
-.dotSpan {
+label:hover {
   cursor: pointer;
-  display: inline-block;
-  height: 8px;
-  margin: 25px 12px 0 16px;
-  position: relative;
-  width: 8px;
-  background-color: black;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: background ease-in-out .5s;
-  -moz-transition: background ease-in-out .5s;
-  -o-transition: background ease-in-out .5s;
-  transition: background ease-in-out .5s;
+  background-color: #ffffff;
+  opacity: 1;
+  transition: all 0.4s ease;
 }
 .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  align-items: baseline;
 }
 .dots {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 5%;
 }
-input:checked ~ .slider-controls > label { 
-  width: 30px;
-  height: 8px;
-  margin: 6px;
+.dots label{
+  width: 2vw;
+  height: 2vw;
   cursor: pointer;
-  background-color: #000;
-  opacity: .5;
-  border-radius: 10px;
+  background-color: #000000;
+  opacity: 1;
+  border-radius: 100%;
   transition: all 0.4s ease;
+  display: flex;
+}
+label:hover {
+  background: rgb(255, 255, 255);
+}
+label:active {
+  background-color: red;
+}
+#s1:checked ~ .navigation > .dots > .dot1 { 
+  opacity: .5;
+  cursor: default;
   }
+  #s2:checked ~ .navigation > .dots > .dot2 { 
+    opacity: .5;
+    cursor: default;
+    }
+    #s3:checked ~ .navigation > .dots > .dot3 { 
+      opacity: .5;
+      cursor: default;
+      }
+      #s4:checked ~ .navigation > .dots > .dot4 { 
+        opacity: .5;
+        cursor: default;
+        }
+        #s5:checked ~ .navigation > .dots > .dot5 { 
+          opacity: .5;
+          cursor: default;
+          }
   #s1:checked ~ .slider-images{
     transform: translateX(0%);
     transition-property: transform;
     transition-duration: 1s;
  }
  #s1:checked ~ .navigation > .captures > .capture1{
-  transform: translateY(-100%);
+  transform: translateY(0%);
   transition-property: transform;
   transition-duration: 1s;
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: podlet1 1s;
  }
   #s2:checked ~ .slider-images{
     transform: translateX(-100%);
@@ -91,11 +112,11 @@ input:checked ~ .slider-controls > label {
     transition-duration: 1s;
  }
  #s2:checked ~ .navigation > .captures > .capture2{
-  transform: translateY(-200%);
+  transform: translateY(-100%);
   transition-property: transform;
   transition-duration: 1s;
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: podlet2 1s;
  }
  #s3:checked ~ .slider-images{
   transform: translateX(-200%);
@@ -103,11 +124,11 @@ input:checked ~ .slider-controls > label {
     transition-duration: 1s;
 }
 #s3:checked ~ .navigation > .captures > .capture3{
-  transform: translateY(-300%);
+  transform: translateY(-200%);
   transition-property: transform;
   transition-duration: 1s;
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: podlet3 1s;
 }
 #s4:checked ~ .slider-images{
   transform: translateX(-300%);
@@ -115,11 +136,11 @@ input:checked ~ .slider-controls > label {
     transition-duration: 1s;
 }
 #s4:checked ~ .navigation > .captures > .capture4{
-  transform: translateY(-400%);
+  transform: translateY(-300%);
   transition-property: transform;
   transition-duration: 1s;
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: podlet4 1s;
 }
 #s5:checked ~ .slider-images{
   transform: translateX(-400%);
@@ -127,19 +148,22 @@ input:checked ~ .slider-controls > label {
     transition-duration: 1s;
 }
 #s5:checked ~ .navigation > .captures > .capture5{
-  transform: translateY(-500%);
+  transform: translateY(-400%);
   transition-property: transform;
   transition-duration: 1s;
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: podlet5 1s;
 }
 .captures {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
-  transform: translateY(30%);
   font-size: 3vw;
+}
+.dotSpan {
+  padding: 75%;
+  margin: -30% -25%;
 }
 .capture1,.capture2,.capture3,.capture4,.capture5{
   opacity: 0;
@@ -148,6 +172,69 @@ input:checked ~ .slider-controls > label {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+@keyframes podlet1 {
+  0% { opacity: 0; }
+  25% { opacity: 0;
+    transform: translateY(100%);
+   }
+  100% { 
+    transform: translateY(0%);
+    opacity: 1; }
+}
+@keyframes podlet2 {
+  0% { opacity: 0; }
+  25% { opacity: 0;
+    transform: translateY(0%);
+   }
+  100% { 
+    transform: translateY(-100%);
+    opacity: 1; }
+}
+@keyframes podlet3 {
+  0% { opacity: 0; }
+  25% { opacity: 0;
+    transform: translateY(-100%);
+   }
+  100% { 
+    transform: translateY(-200%);
+    opacity: 1; }
+}
+@keyframes podlet4 {
+  0% { opacity: 0; }
+  25% { opacity: 0;
+    transform: translateY(-200%);
+   }
+  100% { 
+    transform: translateY(-300%);
+    opacity: 1; }
+}
+@keyframes podlet5 {
+  0% { opacity: 0; }
+  25% { opacity: 0;
+    transform: translateY(-300%);
+   }
+  100% { 
+    transform: translateY(-400%);
+    opacity: 1; }
+}
 input {
   display: none;
+}
+@media screen and (max-width: 500px) {
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    align-items: baseline;
+}
+.dots {
+  order: -1;
+  display: flex;
+    gap: 5%;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
 }
